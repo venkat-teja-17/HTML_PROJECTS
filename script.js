@@ -1,27 +1,22 @@
-let input = document.getElementById('inputBox');
-let buttons = document.querySelectorAll('button');
+function appendToScreen(value) {
+    document.getElementById('screen').value += value;
+}
 
-let string = "";
-let arr = Array.from(buttons);
-arr.forEach(button => {
-    button.addEventListener('click', (e) =>{
-        if(e.target.innerHTML == '='){
-            string = eval(string);
-            input.value = string;
-        }
+function clearScreen() {
+    document.getElementById('screen').value = '';
+    
+}
 
-        else if(e.target.innerHTML == 'AC'){
-            string = "";
-            input.value = string;
-        }
-        else if(e.target.innerHTML == 'DEL'){
-            string = string.substring(0, string.length-1);
-            input.value = string;
-        }
-        else{
-            string += e.target.innerHTML;
-            input.value = string;
-        }
-        
-    })
-})
+function deleteChar() {
+    let screen = document.getElementById('screen').value;
+    document.getElementById('screen').value = screen.substring(0, screen.length - 1);
+}
+
+function calculate() {
+    try {
+        let result = eval(document.getElementById('screen').value);
+        document.getElementById('screen').value = result;
+    } catch (error) {
+        document.getElementById('screen').value = 'Error';
+    }
+}
