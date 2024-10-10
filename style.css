@@ -1,64 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body{
-    width: 100%;
-    height: 100vh;
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #0a0a0a, #3a4452);
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
-.calculator{
-    border: 1px solid #717377;
-    padding: 20px;
-    border-radius: 16px;
-    background: transparent;
-    box-shadow: 0px 3px 15px rgba(211, 4, 211, 0.877);
-
+.calculator {
+    border-radius: 10px;
+    background-color: #333;
+    padding: 15px;
+    max-width: 320px; /* Adjusted for 4 blocks */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-height: 90vh;
 }
 
-input{
-    width: 320px;
-    border: none;
-    padding: 24px;
-    margin: 10px;
-    background: transparent;
-    box-shadow: 0px 3px 15px rgbs(84, 84, 84, 0.1);
-    font-size: 40px;
-    text-align: right;
-    cursor: pointer;
-    color: #e4e2da;
-}
-
-input::placeholder{
-    color: #f5f4f7;
-}
-
-button{
-    border: none;
-    width: 60px;
+.calculator-screen {
+    width: 100%;
     height: 60px;
-    margin: 10px;
-    border-radius: 50%;
-    background: transparent;
-    color: #f7fff8;
-    font-size: 20px;
-    box-shadow: -8px -8px 15px rgba(87, 56, 0, 0.041);
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 24px;
+    color: black;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+/* Flexbox container for buttons */
+.calculator div {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to a new line after 4 items */
+    justify-content: space-between;
+}
+
+button {
+    width: 23%; /* Buttons take roughly 1/4th of the row */
+    height: 45px;
+    margin: 1%; /* Spacing between buttons */
+    font-size: 18px;
+    color: rgb(12, 224, 23);
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
-.equalBtn{
-    background-color: #fb7c14;
+button:hover {
+    background-color: #2d4224;
 }
 
-.operator{
-    color: #6dee0a;
+button.operator {
+    background-color: #1553da;
+}
+
+button.clear {
+    background-color: #c618cc;
+}
+
+button.equal {
+    background-color: #485353;
 }
