@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <title>Sci-Fi Calculator</title>
 </head>
-
 <body>
-    <div class="container">
-        <div class="calculator">
-            <input type="text" id="inputBox" placeholder="0" readonly>
-            <div class="buttons">
-                <div>
-                    <button type="button" class="button operator">AC</button>
-                    <button type="button" class="button operator">DEL</button>
-                    <button type="button" class="button operator">%</button>
-                    <button type="button" class="button operator">/</button>
-                </div>
-                <div>
-                    <button type="button" class="button">7</button>
-                    <button type="button" class="button">8</button>
-                    <button type="button" class="button">9</button>
-                    <button type="button" class="button operator">*</button>
-                </div>
-                <div>
-                    <button type="button" class="button">4</button>
-                    <button type="button" class="button">5</button>
-                    <button type="button" class="button">6</button>
-                    <button type="button" class="button operator">-</button>
-                </div>
-                <div>
-                    <button type="button" class="button">1</button>
-                    <button type="button" class="button">2</button>
-                    <button type="button" class="button">3</button>
-                    <button type="button" class="button operator">+</button>
-                </div>
-                <div>
-                    <button type="button" class="button">00</button>
-                    <button type="button" class="button">0</button>
-                    <button type="button" class="button">.</button>
-                    <button type="button" class="button equalBtn">=</button>
-                </div>
-            </div>
+    <div class="calculator">
+        <input type="text" class="calculator-screen" id="screen" disabled>
+        <div>
+            <button type="button" onclick="clearScreen()" class="clear">C</button>
+            <button type="button" onclick="deleteChar()">Del</button>
+            <button type="button" onclick="appendToScreen('(')">(</button>
+            <button type="button" onclick="appendToScreen(')')">)</button>
+        </div>
+        <div>
+            <button type="button" onclick="appendToScreen('7')">7</button>
+            <button type="button" onclick="appendToScreen('8')">8</button>
+            <button type="button" onclick="appendToScreen('9')">9</button>
+            <button type="button" onclick="appendToScreen('/')">÷</button>
+        </div>
+        <div>
+            <button type="button" onclick="appendToScreen('4')">4</button>
+            <button type="button" onclick="appendToScreen('5')">5</button>
+            <button type="button" onclick="appendToScreen('6')">6</button>
+            <button type="button" onclick="appendToScreen('*')">×</button>
+        </div>
+        <div>
+            <button type="button" onclick="appendToScreen('1')">1</button>
+            <button type="button" onclick="appendToScreen('2')">2</button>
+            <button type="button" onclick="appendToScreen('3')">3</button>
+            <button type="button" onclick="appendToScreen('-')">-</button>
+        </div>
+        <div>
+            <button type="button" onclick="appendToScreen('0')">0</button>
+            <button type="button" onclick="appendToScreen('.')">.</button>
+            <button type="button" onclick="appendToScreen('+')">+</button>
+            <button type="button" onclick="calculate()" class="equal">=</button>
+        </div>
+        <div>
+            <button type="button" onclick="appendToScreen('Math.sin(')">sin</button>
+            <button type="button" onclick="appendToScreen('Math.cos(')">cos</button>
+            <button type="button" onclick="appendToScreen('Math.tan(')">tan</button>
+            <button type="button" onclick="appendToScreen('Math.log(')">log</button>
+        </div>
+        <div>
+            <button type="button" onclick="appendToScreen('Math.sqrt(')">√</button>
+            <button type="button" onclick="appendToScreen('Math.pow(')">x^y</button>
+            <button type="button" onclick="appendToScreen('Math.PI')">π</button>
+            <button type="button" onclick="appendToScreen('Math.E')">e</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
-
 </html>
